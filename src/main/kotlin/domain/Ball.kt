@@ -1,4 +1,4 @@
-
+package domain
 data class Ball(
     val color: BallColor,
     val brand: BallBrand,
