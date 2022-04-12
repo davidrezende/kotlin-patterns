@@ -12,7 +12,7 @@ interface HandlerBallValidatorChain {
 class HandlerBallIsNikeBrand(var next: HandlerBallValidatorChain? = null) : HandlerBallValidatorChain{
     override fun validate(obj: Ball){
         if(obj.brand != BallBrand.NIKE){
-            throw Exception("domain.Ball ${obj.brand} is not valid")
+            throw Exception("Ball ${obj.brand} is not valid")
         }else{
             next?.validate(obj)
         }
@@ -22,7 +22,7 @@ class HandlerBallIsNikeBrand(var next: HandlerBallValidatorChain? = null) : Hand
 class HandlerBallIsBasketBall(var next: HandlerBallValidatorChain? = null) : HandlerBallValidatorChain{
     override fun validate(obj: Ball){
         if(obj.type != BallType.BASKETBALL){
-            throw Exception("domain.Ball of ${obj.type} is not valid")
+            throw Exception("Ball of ${obj.type} is not valid")
         }else{
             next?.validate(obj)
         }
@@ -32,7 +32,7 @@ class HandlerBallIsBasketBall(var next: HandlerBallValidatorChain? = null) : Han
 class HandlerBallIsBlue(var next: HandlerBallValidatorChain? = null) : HandlerBallValidatorChain{
     override fun validate(obj: Ball){
         if(obj.color != BallColor.BLUE){
-            throw Exception("domain.Ball ${obj.color} is not valid")
+            throw Exception("Ball ${obj.color} is not valid")
         }else{
             next?.validate(obj)
         }
@@ -50,11 +50,11 @@ fun main() {
 
     val ball = Ball(BallColor.BLUE, BallBrand.NIKE, BallType.BASKETBALL)
     ballIsNikeBrand.validate(ball)
-    println("domain.Ball is valid")
+    println("Ball is valid")
 
     val ball2 = Ball(BallColor.RED, BallBrand.NIKE, BallType.BASKETBALL)
     ballIsNikeBrand.validate(ball2)
     //unreachable code
-    println("domain.Ball is valid")
+    println("Ball is valid")
 
 }
