@@ -10,7 +10,7 @@ class Handler50Real : HandlerChain {
     override fun withdraw(value: Int) {
         println("Trying withdraw value with only notes of 50 reais")
         if (value.mod(50) == 0) {
-            println("Handler50Real: $value")
+            println("Yes! Withdraw is possible with same notes of 50 reais")
         } else {
             nextHandler?.withdraw(value)
         }
@@ -27,7 +27,7 @@ class Handler20Real : HandlerChain {
     override fun withdraw(value: Int) {
         println("Trying withdraw value with only notes of 20 reais")
         if (value.mod(20) == 0) {
-            println("Handler20Real: $value")
+            println("Yes! Withdraw is possible with same notes of 20 reais")
         } else {
             nextHandler?.withdraw(value)
         }
@@ -44,7 +44,7 @@ class Handler10Real : HandlerChain {
     override fun withdraw(value: Int) {
         println("Trying withdraw value with only notes of 10 reais")
         if (value.mod(10) == 0) {
-            println("Handler10Real: $value")
+            println("Yes! Withdraw is possible with same notes of 10 reais")
         } else {
             nextHandler?.withdraw(value)
         }
@@ -82,10 +82,10 @@ fun main() {
     handler20Real.setNextHandler(handler10Real)
     handler10Real.setNextHandler(handler5Real)
 
-    println("Trying withdraw with value of 106 reais")
+    println("Trying withdraw 106 reais")
     handler50Real.withdraw(106)
-    println("Trying withdraw with value of 900 reais")
+    println("Trying withdraw 900 reais")
     handler50Real.withdraw(900)
-    println("Trying withdraw with value of 105 reais")
+    println("Trying withdraw 105 reais")
     handler50Real.withdraw(105)
 }
