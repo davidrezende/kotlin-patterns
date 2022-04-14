@@ -2,7 +2,7 @@
 
 ## Diagrama
 
-![Diagrama Strategy](../../../../resources/images/chainOfResponsability/chain-uml-class-diagram.png)
+![Diagrama Chain of Responsability](../../../../resources/images/chainOfResponsability/chain-uml-class-diagram.png)
 
 - Padrão de design de software **comportamental**
 
@@ -32,18 +32,4 @@
 
 - Servlet Filters
     - Permite que vários filtros processem uma solicitação HTTP.
-  
-
-    public void doFilter(
-      ServletRequest request,
-      ServletResponse response,
-      FilterChain chain)
-      throws IOException, ServletException {
-
-        // process the request
-
-        // pass the request (i.e. the command) along the filter chain
-        chain.doFilter(request, response);
-    }
-
 

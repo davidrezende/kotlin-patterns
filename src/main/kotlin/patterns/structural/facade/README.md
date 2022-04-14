@@ -1,7 +1,7 @@
 # Facade/Fachada
 
 ## Diagrama
-![Diagrama Strategy](../../../../resources/images/facade/diagrama-facade.png)
+![Diagrama Facade](../../../../resources/images/facade/diagrama-facade.png)
 
 - Padrão de design de software **estrutural**
 - **Tornar subsistemas complexos mais fáceis de usar.**
