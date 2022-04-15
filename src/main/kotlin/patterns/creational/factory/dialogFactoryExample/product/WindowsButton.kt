@@ -1,4 +1,4 @@
-package patterns.creational.factory.product
+package patterns.creational.factory.dialogFactoryExample.product
 
 class WindowsButton : Button {
     override fun render() {

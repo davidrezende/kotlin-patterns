@@ -1,6 +1,6 @@
-package patterns.creational.factory.factory
+package patterns.creational.factory.dialogFactoryExample.factory
 
-import patterns.creational.factory.product.Button
+import patterns.creational.factory.dialogFactoryExample.product.Button
 
 //Base Factory Class
 abstract class DialogFactory {

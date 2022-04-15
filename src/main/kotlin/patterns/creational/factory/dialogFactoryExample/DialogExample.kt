@@ -1,9 +1,9 @@
 package patterns.creational.factory
 
-import patterns.creational.factory.factory.DialogFactory
-import patterns.creational.factory.factory.HtmlDialogFactory
-import patterns.creational.factory.factory.WindowsDialogFactory
-import patterns.creational.factory.factory.enum.DialogEnum
+import patterns.creational.factory.dialogFactoryExample.factory.DialogFactory
+import patterns.creational.factory.dialogFactoryExample.factory.HtmlDialogFactory
+import patterns.creational.factory.dialogFactoryExample.factory.WindowsDialogFactory
+import patterns.creational.factory.dialogFactoryExample.factory.enum.DialogEnum
 
 //Neste exemplo, os botões desempenham uma função de produto e os dialogs atuam como criadores.
 fun main() {

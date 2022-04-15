@@ -1,4 +1,4 @@
-package patterns.creational.factory.factory.enum
+package patterns.creational.factory.dialogFactoryExample.factory.enum
 
 enum class DialogEnum(val type: String) {
     HTML("HTML"),
