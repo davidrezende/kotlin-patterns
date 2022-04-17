@@ -6,35 +6,38 @@ import domain.BallColor
 import domain.BallType
 
 interface HandlerBallValidatorChain {
-    fun validate(obj: Ball)
+    fun validate(obj: Ball): Boolean
 }
 
-class HandlerBallIsNikeBrand(var next: HandlerBallValidatorChain? = null) : HandlerBallValidatorChain{
-    override fun validate(obj: Ball){
-        if(obj.brand != BallBrand.NIKE){
-            throw Exception("Ball ${obj.brand} is not valid")
-        }else{
-            next?.validate(obj)
+class HandlerBallIsNikeBrand(var next: HandlerBallValidatorChain? = null) : HandlerBallValidatorChain {
+    override fun validate(obj: Ball): Boolean {
+        if (obj.brand != BallBrand.NIKE) {
+            println("HandlerBallIsNikeBrand false")
+            return false
+        } else {
+            return next?.validate(obj) ?: true
         }
     }
 }
 
-class HandlerBallIsBasketBall(var next: HandlerBallValidatorChain? = null) : HandlerBallValidatorChain{
-    override fun validate(obj: Ball){
-        if(obj.type != BallType.BASKETBALL){
-            throw Exception("Ball of ${obj.type} is not valid")
-        }else{
-            next?.validate(obj)
+class HandlerBallIsBasketBall(var next: HandlerBallValidatorChain? = null) : HandlerBallValidatorChain {
+    override fun validate(obj: Ball): Boolean {
+        if (obj.type != BallType.BASKETBALL) {
+            println("HandlerBallIsBasketBall false")
+            return false
+        } else {
+            return next?.validate(obj) ?: true
         }
     }
 }
 
-class HandlerBallIsBlue(var next: HandlerBallValidatorChain? = null) : HandlerBallValidatorChain{
-    override fun validate(obj: Ball){
-        if(obj.color != BallColor.BLUE){
-            throw Exception("Ball ${obj.color} is not valid")
-        }else{
-            next?.validate(obj)
+class HandlerBallIsBlue(var next: HandlerBallValidatorChain? = null) : HandlerBallValidatorChain {
+    override fun validate(obj: Ball): Boolean {
+        if (obj.color != BallColor.BLUE) {
+            println("HandlerBallIsBlue false")
+            return false
+        } else {
+            return next?.validate(obj) ?: true
         }
     }
 }
@@ -49,12 +52,14 @@ fun main() {
     ballIsBasketBall.next = ballIsBlue
 
     val ball = Ball(BallColor.BLUE, BallBrand.NIKE, BallType.BASKETBALL)
-    ballIsNikeBrand.validate(ball)
+    val resultado = ballIsNikeBrand.validate(ball)
     println("Ball is valid")
+    println(resultado)
 
     val ball2 = Ball(BallColor.RED, BallBrand.NIKE, BallType.BASKETBALL)
-    ballIsNikeBrand.validate(ball2)
+    val resultado2 = ballIsNikeBrand.validate(ball2)
     //unreachable code
-    println("Ball is valid")
+    println("Ball is not valid")
+    println(resultado2)
 
 }

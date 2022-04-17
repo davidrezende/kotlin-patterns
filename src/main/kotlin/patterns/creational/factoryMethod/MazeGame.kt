@@ -1,4 +1,4 @@
-package patterns.creational.factory
+package patterns.creational.factoryMethod
 
 /**
  * Product
@@ -29,7 +29,6 @@ class MagicMazeFactory : MazeFactory() {
         return MagicRoom()
     }
 }
-
 
 fun main(){
     val mazeFactory = MagicMazeFactory()

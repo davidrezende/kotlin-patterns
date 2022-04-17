@@ -9,7 +9,7 @@
 
 - O Produto declara a interface, que é comum a todos os objetos que podem ser produzidos pelo criador e suas subclasses.
 
-- Produtos Concretos são implementações diferentes da interface do produto.
+- Produtos concretos são implementações diferentes da interface do produto.
 
 - A classe Criador declara o método fábrica que retorna novos objetos produto. É importante que o tipo de retorno desse método corresponda à interface do produto.
 
