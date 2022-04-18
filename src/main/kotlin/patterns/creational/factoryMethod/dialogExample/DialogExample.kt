@@ -1,5 +1,4 @@
-package patterns.creational.factoryMethod
-
+package patterns.creational.factoryMethod.dialogExample
 import patterns.creational.factoryMethod.dialogExample.factory.DialogFactory
 import patterns.creational.factoryMethod.dialogExample.factory.HtmlDialogFactory
 import patterns.creational.factoryMethod.dialogExample.factory.WindowsDialogFactory
